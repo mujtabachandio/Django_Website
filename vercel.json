@@ -1,20 +1,13 @@
 {
-    "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ],
-
-    "builds": [{
-        "src": "djangoprojectname/wsgi.py",
-        "use": "@vercel/python",
-        "config": { "maxLambdaSize": "15mb", "runtime": "python3.12" }
-    }],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/wsgi.py"
-        }
-    ]
+  "builds": [{
+      "src": "main_file/wsgi.py",
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+  }],
+  "routes": [
+      {
+          "src": "/(.*)",
+          "dest": "main_file/wsgi.py"
+      }
+  ]
 }
